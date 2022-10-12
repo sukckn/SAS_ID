@@ -1,0 +1,251 @@
+
+
+ds2_options scond=WARNING;
+/* Rule Set Accuracy_Title version 1.2 generated on Wed Oct 12 15:40:07 UTC 2022 */
+
+DS2_OPTIONS LOGICALEXPR = STANDARD;
+DS2_OPTIONS SCOND = WARNING;
+DS2_OPTIONS MISSING_NOTE;
+
+/* PACKAGE_START: packageName="Field_Title_Accuracy_Title", referencedBy=Field_Title, name=Accuracy_Title, nodeId=43e680e8-89f1-468b-bfda-133296ee441a, objectUri=/businessRules/ruleSets/87e07d9d-de87-4227-8219-79fade09ccee/revisions/7c0ed058-bc02-4583-9488-323a86145c39 */
+  package "Field_Title_Accuracy_Title"  / inline;
+
+      dcl package logger _logger('App.SASDCM');
+      dcl package logger logr_variableTrace('App.TableServices.DS2.Runtime.TraceVariables');
+
+      dcl varchar(512)   lookup_value;
+
+      dcl varchar(256)   lookup_key;
+      dcl package datagrid lookup_0 ('lookup_0'); /* lookup for $L42HJT4XIMRHMZKME6JFRUT6AFQ_K */
+
+      /* for inline lookups we initialize datagrids in the package constructor */
+      forward DataGrid_create;
+      forward DataGrid_FilteredGet;
+      method "Field_Title_Accuracy_Title"();
+
+            /* lookup: $L42HJT4XIMRHMZKME6JFRUT6AFQ_K */
+            DataGrid_create(lookup_0, '[{"metadata":[{"key":"string"},{"value":"string"}]}, {"data":[
+["Doctor","Doctor"],["Lady","Lady"],["Lord","Lord"],["Miss","Miss"],["Mr","Mr"],["Mrs","Mrs"],["Ms","Ms"],
+["Prof","Prof"]]}]');
+
+      end;
+
+      method getLookupValue() returns varchar(512);
+        return lookup_value;
+      end;
+
+      method doLookupFind(varchar(256) lookupKey, varchar(100) lookupName) returns int;
+        dcl integer rc;
+        rc = 1;
+        lookup_value = '';
+        if ( not missing(lookupKey) ) then do;
+
+                lookup_key = strip(lookupkey);
+
+                select(lookupName);
+                  when('$L42HJT4XIMRHMZKME6JFRUT6AFQ_K.') lookup_value = DataGrid_FilteredGet(lookup_0, 'value', 'key', 'eq', lookup_key);
+                end;
+
+                if ( not missing(lookup_value) ) then do;
+                  rc = 0;
+                end;
+        end;
+
+        return rc;
+      end;
+
+        /* ---- RULE FIRED FLAG COUNT = 0 ---- */
+            method setruleFiredBasePosition(integer newBasePosition); end;
+            method setDecisionNodeID(varchar newDecisonNodeID); end;
+            method enableRuleFiredRecording(); end;
+            method disableRuleFiredRecording(); end;
+            method initRuleFireHashes(); end;
+            method getRuleFiredFlagCount() returns integer;  return 0; end;
+            method recordRuleFired(
+              in_out char    ruleFiredFlags,
+              in_out integer rulesFiredForRecordCount,
+              char(36)       this_rule_id);
+            end;
+
+method DataGrid_create(package datagrid aGrid,
+varchar(10485760) JSONTableString)
+returns int;
+    dcl int rowCnt;    
+    rowCnt = aGrid.deserialize(JSONTableString);
+    if (rowCnt = 0) then
+        rowCnt = aGrid.rowCount();
+    return rowCnt;    
+end;
+
+method DataGrid_FilteredGet(package datagrid aGrid,
+varchar(255) srcCol,
+varchar(255) cmpCol,
+char(2)      cmpOp,
+varchar(32767) cmpVal)
+returns varchar;
+    dcl varchar(32767) colVal;
+    colVal = aGrid.filteredGet(cmpCol, cmpOp, cmpVal, srcCol);
+    return colVal;
+end;
+
+    method execute( in_out varchar "Value_Title",in_out double "isAccuracy_Title");
+
+;
+         "isAccuracy_Title" = 0 ;
+
+         if (0 = doLookupFind("Value_Title",'$L42HJT4XIMRHMZKME6JFRUT6AFQ_K.')) then do;
+         "isAccuracy_Title" = 1 ;
+
+         end;
+
+         "end_037172f3-0b19-46f9-b849-75b2654f3f87":
+
+      rule_end:  /* label for rule RETURN action */
+    end;
+
+/* PACKAGE_END: "Field_Title_Accuracy_Title" */
+  endpackage;
+ds2_options scond=WARNING;
+/* Rule Set Empty_String version 1.2 generated on Wed Oct 12 15:40:07 UTC 2022 */
+
+DS2_OPTIONS LOGICALEXPR = STANDARD;
+DS2_OPTIONS SCOND = WARNING;
+DS2_OPTIONS MISSING_NOTE;
+
+/* PACKAGE_START: packageName="Field_Title_Empty_String", referencedBy=Field_Title, name=Empty_String, nodeId=a64dd10f-30e7-4f0f-bbc0-815628dbb86c, objectUri=/businessRules/ruleSets/bcc30852-5555-4b20-bdf5-93cbccd8053a/revisions/fa510da0-1a7f-4fb2-8085-90914d14aace */
+  package "Field_Title_Empty_String"  / inline;
+
+      dcl package logger _logger('App.SASDCM');
+      dcl package logger logr_variableTrace('App.TableServices.DS2.Runtime.TraceVariables');
+
+        /* ---- RULE FIRED FLAG COUNT = 0 ---- */
+            method setruleFiredBasePosition(integer newBasePosition); end;
+            method setDecisionNodeID(varchar newDecisonNodeID); end;
+            method enableRuleFiredRecording(); end;
+            method disableRuleFiredRecording(); end;
+            method initRuleFireHashes(); end;
+            method getRuleFiredFlagCount() returns integer;  return 0; end;
+            method recordRuleFired(
+              in_out char    ruleFiredFlags,
+              in_out integer rulesFiredForRecordCount,
+              char(36)       this_rule_id);
+            end;
+
+    method execute( in_out varchar "Value_String",in_out double "isEmptyString");
+
+;
+         "isEmptyString" = 1 ;
+
+         if (LENGTH(Value_String) = 0) then do;
+         "isEmptyString" = 0 ;
+
+goto "end_48ca2e08-37d5-4489-8d7c-40bf0beb3a61";
+end;
+         if (MISSING(Value_String) ) then do;
+         "isEmptyString" = 0 ;
+
+         end;
+
+         "end_48ca2e08-37d5-4489-8d7c-40bf0beb3a61":
+
+      rule_end:  /* label for rule RETURN action */
+    end;
+
+/* PACKAGE_END: "Field_Title_Empty_String" */
+  endpackage;
+
+  DS2_OPTIONS LOGICALEXPR = STANDARD;
+  DS2_OPTIONS SCOND = WARNING;
+  DS2_OPTIONS MISSING_NOTE;
+
+/* Decision Field_Title version 1.2 generated on Wed Oct 12 15:40:07 UTC 2022 */
+/* {PACKAGE_START} */
+  package Field_Title  / inline;
+    dcl package logger logr_perf('App.tk.SID.Perf');
+    dcl double timer_start;
+    dcl double elapsed_time;
+    dcl double total_timer_start;
+    dcl double total_elapsed_time;
+
+    dcl package "Field_Title_Accuracy_Title" "Field_Title_Accuracy_Title_hdl"();
+    dcl package "Field_Title_Empty_String" "Field_Title_Empty_String_hdl"();
+
+      method init();
+     end;
+
+    method execute_internal(
+       varchar(100) "Value_Title"
+      ,in_out double "isAccuracy_Title"
+      ,in_out double "isCompleteness_Title"
+      ,in_out varchar "rnAccuracy_Title"
+      ,in_out varchar "rnCompleteness_Title"
+      ,in_out varchar "thAccuracy_Title"
+      ,in_out varchar "thCompleteness_Title"
+
+      ,in_out integer "_filter_"
+
+    );
+        dcl integer dg_filter_;
+
+       dcl integer _masRC;
+
+        total_timer_start = datetime();
+
+"isAccuracy_Title" = 1;
+"isCompleteness_Title" = 1;
+"rnAccuracy_Title" = 'Accuracy_Title';
+"rnCompleteness_Title" = 'Completeness_Title:Empty_String';
+"thAccuracy_Title" = '20:40';
+"thCompleteness_Title" = '20:40';
+
+        timer_start = datetime();
+        "Field_Title_Empty_String_hdl".execute("Value_Title", "isCompleteness_Title");
+        elapsed_time = datetime() - timer_start;
+        logr_perf.log( 'd', 'Package Name: Field_Title, Node Name: Empty_String, Node ID: a64dd10f-30e7-4f0f-bbc0-815628dbb86c, NODE DURATION: ' .. elapsed_time);
+
+        if ( isCompleteness_Title = 0 ) then do;
+
+        end;
+        else do;
+
+             timer_start = datetime();
+             "Field_Title_Accuracy_Title_hdl".execute("Value_Title", "isAccuracy_Title");
+             elapsed_time = datetime() - timer_start;
+             logr_perf.log( 'd', 'Package Name: Field_Title, Node Name: Accuracy_Title, Node ID: 43e680e8-89f1-468b-bfda-133296ee441a, NODE DURATION: ' .. elapsed_time);
+
+        end;
+
+        "end":/*label for decision node link to flow end*/
+
+        total_elapsed_time = datetime() - total_timer_start;
+        logr_perf.log( 'd', 'Package Name: Field_Title, TOTAL DURATION: ' .. total_elapsed_time);
+
+     end;
+
+    method execute(
+       varchar(100) "Value_Title_"
+      ,in_out double "isAccuracy_Title"
+      ,in_out double "isCompleteness_Title"
+      ,in_out varchar "rnAccuracy_Title"
+      ,in_out varchar "rnCompleteness_Title"
+      ,in_out varchar "thAccuracy_Title"
+      ,in_out varchar "thCompleteness_Title"
+);
+
+      dcl integer _filter_;
+
+          execute_internal(
+          "Value_Title_"
+         ,"isAccuracy_Title"
+         ,"isCompleteness_Title"
+         ,"rnAccuracy_Title"
+         ,"rnCompleteness_Title"
+         ,"thAccuracy_Title"
+         ,"thCompleteness_Title"
+      ,"_filter_"
+      );
+
+    end;
+
+    /* {PACKAGE_END} */
+      endpackage;

@@ -1,0 +1,53 @@
+[
+    {
+        "id" : "bcc30852-5555-4b20-bdf5-93cbccd8053a",
+        "name" : "Empty_String",
+        "type" : "application/vnd.sas.business.rule.set",
+        "versionId" : "fa510da0-1a7f-4fb2-8085-90914d14aace",
+        "versionName" : "1.2",
+        "activeVersionReference" : false,
+        "referencingDecisions" : [
+            {
+                "id" : "e46a7864-4aa5-42bb-8789-39d0ff4f66b9",
+                "name" : "Field_Title",
+                "versionId" : "e195bbec-47f7-4d1f-b7a1-e209e5d3e7e0"
+            }
+        ],
+        "customContext" : false,
+        "customContextMicroAnalytics" : false
+    },
+    {
+        "id" : "87e07d9d-de87-4227-8219-79fade09ccee",
+        "name" : "Accuracy_Title",
+        "type" : "application/vnd.sas.business.rule.set",
+        "versionId" : "7c0ed058-bc02-4583-9488-323a86145c39",
+        "versionName" : "1.2",
+        "activeVersionReference" : false,
+        "referencingDecisions" : [
+            {
+                "id" : "e46a7864-4aa5-42bb-8789-39d0ff4f66b9",
+                "name" : "Field_Title",
+                "versionId" : "e195bbec-47f7-4d1f-b7a1-e209e5d3e7e0"
+            }
+        ],
+        "customContext" : false,
+        "customContextMicroAnalytics" : false
+    },
+    {
+        "id" : "e68e99f2-e864-4ecc-a984-f24b1a4fc02c",
+        "name" : "Person Titles",
+        "type" : "application/vnd.sas.business.rule.lookup",
+        "versionId" : "cbe00cc3-6dcf-4935-8fc7-ecfdadfcb5a1",
+        "versionName" : "1.1",
+        "activeVersionReference" : true,
+        "referencingDecisions" : [
+            {
+                "id" : "e46a7864-4aa5-42bb-8789-39d0ff4f66b9",
+                "name" : "Field_Title",
+                "versionId" : "e195bbec-47f7-4d1f-b7a1-e209e5d3e7e0"
+            }
+        ],
+        "customContext" : false,
+        "customContextMicroAnalytics" : false
+    }
+]

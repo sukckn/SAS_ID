@@ -1,0 +1,100 @@
+{
+    "inputs" : [
+        {
+            "creationTimeStamp" : "2022-10-05T10:06:54.652Z",
+            "modifiedTimeStamp" : "2022-10-05T10:06:54.679Z",
+            "createdBy" : "viyademo01",
+            "modifiedBy" : "viyademo01",
+            "id" : "5181fa98-4d4e-4940-baff-72652272892f",
+            "direction" : "input",
+            "name" : "Value_Title",
+            "dataType" : "string",
+            "generateDataGridColumns" : false,
+            "legacy" : false
+        }
+    ],
+    "outputs" : [
+        {
+            "creationTimeStamp" : "2022-10-05T10:06:54.653Z",
+            "modifiedTimeStamp" : "2022-10-05T10:06:54.679Z",
+            "createdBy" : "viyademo01",
+            "modifiedBy" : "viyademo01",
+            "id" : "202c6e53-254b-46ee-943a-7ce4fb189bca",
+            "direction" : "output",
+            "name" : "isAccuracy_Title",
+            "dataType" : "boolean",
+            "defaultValue" : true,
+            "generateDataGridColumns" : false,
+            "legacy" : false
+        },
+        {
+            "creationTimeStamp" : "2022-10-05T10:06:54.653Z",
+            "modifiedTimeStamp" : "2022-10-05T10:06:54.679Z",
+            "createdBy" : "viyademo01",
+            "modifiedBy" : "viyademo01",
+            "id" : "b4f728f8-7265-4805-aa3d-5aa929d8e18b",
+            "direction" : "output",
+            "name" : "isCompleteness_Title",
+            "dataType" : "boolean",
+            "defaultValue" : true,
+            "generateDataGridColumns" : false,
+            "legacy" : false
+        },
+        {
+            "creationTimeStamp" : "2022-10-05T10:06:54.653Z",
+            "modifiedTimeStamp" : "2022-10-05T10:06:54.679Z",
+            "createdBy" : "viyademo01",
+            "modifiedBy" : "viyademo01",
+            "id" : "21c4631f-038f-424b-b6ef-4e12abada974",
+            "direction" : "output",
+            "name" : "rnAccuracy_Title",
+            "dataType" : "string",
+            "description" : "Rule Name Field",
+            "defaultValue" : "Accuracy_Title",
+            "generateDataGridColumns" : false,
+            "legacy" : false
+        },
+        {
+            "creationTimeStamp" : "2022-10-05T10:06:54.653Z",
+            "modifiedTimeStamp" : "2022-10-05T10:06:54.679Z",
+            "createdBy" : "viyademo01",
+            "modifiedBy" : "viyademo01",
+            "id" : "315b5230-d9c2-43bb-945a-2f34e9a6ab74",
+            "direction" : "output",
+            "name" : "rnCompleteness_Title",
+            "dataType" : "string",
+            "description" : "Rule Name Field",
+            "defaultValue" : "Completeness_Title:Empty_String",
+            "generateDataGridColumns" : false,
+            "legacy" : false
+        },
+        {
+            "creationTimeStamp" : "2022-10-05T10:06:54.653Z",
+            "modifiedTimeStamp" : "2022-10-05T10:06:54.679Z",
+            "createdBy" : "viyademo01",
+            "modifiedBy" : "viyademo01",
+            "id" : "e57bca1f-5218-4b57-a3fc-b1d9f7e514b2",
+            "direction" : "output",
+            "name" : "thAccuracy_Title",
+            "dataType" : "string",
+            "description" : "Thresholds for rule",
+            "defaultValue" : "20:40",
+            "generateDataGridColumns" : false,
+            "legacy" : false
+        },
+        {
+            "creationTimeStamp" : "2022-10-05T10:06:54.653Z",
+            "modifiedTimeStamp" : "2022-10-05T10:06:54.679Z",
+            "createdBy" : "viyademo01",
+            "modifiedBy" : "viyademo01",
+            "id" : "1f161c38-8264-4813-9e0b-2eed9d773bad",
+            "direction" : "output",
+            "name" : "thCompleteness_Title",
+            "dataType" : "string",
+            "description" : "Thresholds for rule",
+            "defaultValue" : "20:40",
+            "generateDataGridColumns" : false,
+            "legacy" : false
+        }
+    ]
+}
