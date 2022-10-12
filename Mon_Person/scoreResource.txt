@@ -1,0 +1,1510 @@
+
+
+ds2_options scond=WARNING;
+/* Custom Object Field_DOB retrieved on Wed Oct 12 15:48:48 UTC 2022 */ 
+
+ds2_options scond=WARNING;
+/* Rule Set Empty_String version 1.2 generated on Wed Oct 12 15:48:47 UTC 2022 */
+
+DS2_OPTIONS LOGICALEXPR = STANDARD;
+DS2_OPTIONS SCOND = WARNING;
+DS2_OPTIONS MISSING_NOTE;
+
+/* PACKAGE_START: packageName="Field_DOB_Empty_String", referencedBy=Field_DOB, name=Empty_String, nodeId=ad982a0a-4604-48bd-9fa8-0058f38a8dd3, objectUri=/businessRules/ruleSets/bcc30852-5555-4b20-bdf5-93cbccd8053a/revisions/fa510da0-1a7f-4fb2-8085-90914d14aace */
+package "Field_DOB_Empty_String"  / inline;
+
+dcl package logger _logger('App.SASDCM');
+dcl package logger logr_variableTrace('App.TableServices.DS2.Runtime.TraceVariables');
+
+/* ---- RULE FIRED FLAG COUNT = 0 ---- */
+
+    method setruleFiredBasePosition(integer newBasePosition);
+end;
+method setDecisionNodeID(varchar newDecisonNodeID);
+end;
+method enableRuleFiredRecording();
+end;
+method disableRuleFiredRecording();
+end;
+method initRuleFireHashes();
+end;
+method getRuleFiredFlagCount() returns integer;
+return 0;
+end;
+method recordRuleFired(
+in_out char    ruleFiredFlags,
+in_out integer rulesFiredForRecordCount,
+char(36)       this_rule_id);
+end;
+
+method execute( in_out varchar "Value_String",in_out double "isEmptyString");
+
+;
+"isEmptyString" = 1 ;
+
+if (LENGTH(Value_String) = 0) then do;
+"isEmptyString" = 0 ;
+
+goto "end_48ca2e08-37d5-4489-8d7c-40bf0beb3a61";
+end;
+if (MISSING(Value_String) ) then do;
+"isEmptyString" = 0 ;
+
+end;
+
+"end_48ca2e08-37d5-4489-8d7c-40bf0beb3a61":
+
+rule_end:  /* label for rule RETURN action */
+end;
+
+/* PACKAGE_END: "Field_DOB_Empty_String" */
+endpackage;
+
+DS2_OPTIONS LOGICALEXPR = STANDARD;
+DS2_OPTIONS SCOND = WARNING;
+DS2_OPTIONS MISSING_NOTE;
+
+/* Decision Field_DOB version 1.1 generated on Wed Oct 12 15:48:47 UTC 2022 */
+/* PACKAGE_START: packageName="Mon_Person_Field_DOB", referencedBy=Mon_Person, name=Field_DOB, nodeId=0e9db4ef-8d64-4d30-8ec9-c70c218703bf, objectUri=/decisions/flows/7175c176-1fd4-44c3-9854-6b779aa1c222/revisions/e338a4e3-6610-4cdd-a6e9-5e7ad9d0ea40 */
+package "Mon_Person_Field_DOB"  / inline;
+dcl package logger logr_perf('App.tk.SID.Perf');
+dcl double timer_start;
+dcl double elapsed_time;
+dcl double total_timer_start;
+dcl double total_elapsed_time;
+
+dcl package "Field_DOB_Empty_String" "Field_DOB_Empty_String_hdl"();
+
+method init();
+end;
+
+method execute (
+varchar(100) "Value_DOB"
+,in_out double "isCompleteness_DOB"
+,in_out varchar "rnCompleteness_DOB"
+,in_out varchar "thCompleteness_DOB"
+
+,in_out integer "_filter_"
+
+);
+dcl integer dg_filter_;
+
+total_timer_start = datetime();
+
+"isCompleteness_DOB" = 1;
+"rnCompleteness_DOB" = 'Completeness_DOB:Empty_String';
+"thCompleteness_DOB" = '0:0';
+
+timer_start = datetime();
+"Field_DOB_Empty_String_hdl".execute("Value_DOB", "isCompleteness_DOB");
+elapsed_time = datetime() - timer_start;
+logr_perf.log( 'd', 'Package Name: "Mon_Person_Field_DOB", Node Name: Empty_String, Node ID: ad982a0a-4604-48bd-9fa8-0058f38a8dd3, NODE DURATION: ' .. elapsed_time);
+
+"end":/*label for decision node link to flow end*/
+
+total_elapsed_time = datetime() - total_timer_start;
+logr_perf.log( 'd', 'Package Name: "Mon_Person_Field_DOB", TOTAL DURATION: ' .. total_elapsed_time);
+
+end;
+
+/* PACKAGE_END: "Mon_Person_Field_DOB" */
+endpackage;
+ds2_options scond=WARNING;
+/* Custom Object Field_Email retrieved on Wed Oct 12 15:48:48 UTC 2022 */ 
+
+ds2_options scond=WARNING;
+/* Rule Set Empty_String version 1.2 generated on Wed Oct 12 15:48:47 UTC 2022 */
+
+DS2_OPTIONS LOGICALEXPR = STANDARD;
+DS2_OPTIONS SCOND = WARNING;
+DS2_OPTIONS MISSING_NOTE;
+
+/* PACKAGE_START: packageName="Field_Email_Empty_String", referencedBy=Field_Email, name=Empty_String, nodeId=c25f05da-c114-4a1e-a164-20636451836d, objectUri=/businessRules/ruleSets/bcc30852-5555-4b20-bdf5-93cbccd8053a/revisions/fa510da0-1a7f-4fb2-8085-90914d14aace */
+package "Field_Email_Empty_String"  / inline;
+
+dcl package logger _logger('App.SASDCM');
+dcl package logger logr_variableTrace('App.TableServices.DS2.Runtime.TraceVariables');
+
+/* ---- RULE FIRED FLAG COUNT = 0 ---- */
+
+    method setruleFiredBasePosition(integer newBasePosition);
+end;
+method setDecisionNodeID(varchar newDecisonNodeID);
+end;
+method enableRuleFiredRecording();
+end;
+method disableRuleFiredRecording();
+end;
+method initRuleFireHashes();
+end;
+method getRuleFiredFlagCount() returns integer;
+return 0;
+end;
+method recordRuleFired(
+in_out char    ruleFiredFlags,
+in_out integer rulesFiredForRecordCount,
+char(36)       this_rule_id);
+end;
+
+method execute( in_out varchar "Value_String",in_out double "isEmptyString");
+
+;
+"isEmptyString" = 1 ;
+
+if (LENGTH(Value_String) = 0) then do;
+"isEmptyString" = 0 ;
+
+goto "end_48ca2e08-37d5-4489-8d7c-40bf0beb3a61";
+end;
+if (MISSING(Value_String) ) then do;
+"isEmptyString" = 0 ;
+
+end;
+
+"end_48ca2e08-37d5-4489-8d7c-40bf0beb3a61":
+
+rule_end:  /* label for rule RETURN action */
+end;
+
+/* PACKAGE_END: "Field_Email_Empty_String" */
+endpackage;
+ds2_options scond=WARNING;
+/* Rule Set Validity_Email version 1.1 generated on Wed Oct 12 15:48:47 UTC 2022 */
+
+DS2_OPTIONS LOGICALEXPR = STANDARD;
+DS2_OPTIONS SCOND = WARNING;
+DS2_OPTIONS MISSING_NOTE;
+
+/* PACKAGE_START: packageName="Field_Email_Validity_Email", referencedBy=Field_Email, name=Validity_Email, nodeId=bca3eabc-ffcd-4791-a5c6-9f9424ed1dba, objectUri=/businessRules/ruleSets/ea9fc7a3-b62c-4128-8616-fd88c78624b2/revisions/fd3142f4-7fb8-425c-a335-153827e62466 */
+package "Field_Email_Validity_Email"  / inline;
+
+dcl package logger _logger('App.SASDCM');
+dcl package logger logr_variableTrace('App.TableServices.DS2.Runtime.TraceVariables');
+
+/* ---- RULE FIRED FLAG COUNT = 0 ---- */
+method setruleFiredBasePosition(integer newBasePosition);
+end;
+method setDecisionNodeID(varchar newDecisonNodeID);
+end;
+method enableRuleFiredRecording();
+end;
+method disableRuleFiredRecording();
+end;
+method initRuleFireHashes();
+end;
+method getRuleFiredFlagCount() returns integer;
+return 0;
+end;
+method recordRuleFired(
+in_out char    ruleFiredFlags,
+in_out integer rulesFiredForRecordCount,
+char(36)       this_rule_id);
+end;
+
+method execute( in_out varchar "Value_Email",in_out double "isValidity_Email");
+dcl double "re";
+
+;
+"isValidity_Email" = 0 ;
+
+re= prxparse('/[a-z0-9!#\$%&''*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#\$%&''*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/i');
+isValidity_Email= 1;
+if ^prxmatch(re, Value_Email) AND LENGTH(Value_Email) > 0 then do;
+isValidity_Email= 0;
+end;
+
+rule_end:  /* label for rule RETURN action */
+end;
+
+/* PACKAGE_END: "Field_Email_Validity_Email" */
+endpackage;
+
+DS2_OPTIONS LOGICALEXPR = STANDARD;
+DS2_OPTIONS SCOND = WARNING;
+DS2_OPTIONS MISSING_NOTE;
+
+/* Decision Field_Email version 1.1 generated on Wed Oct 12 15:48:48 UTC 2022 */
+/* PACKAGE_START: packageName="Mon_Person_Field_Email", referencedBy=Mon_Person, name=Field_Email, nodeId=955a5c0c-c7d4-433e-9765-e1e3caeb8f6e, objectUri=/decisions/flows/78debad4-22f8-4047-be62-be140ba69a35/revisions/4e519468-c1b1-473d-ae40-66b654d54027 */
+package "Mon_Person_Field_Email"  / inline;
+dcl package logger logr_perf('App.tk.SID.Perf');
+dcl double timer_start;
+dcl double elapsed_time;
+dcl double total_timer_start;
+dcl double total_elapsed_time;
+
+dcl package "Field_Email_Empty_String" "Field_Email_Empty_String_hdl"();
+dcl package "Field_Email_Validity_Email" "Field_Email_Validity_Email_hdl"();
+
+method init();
+end;
+
+method execute (
+varchar(100) "Value_Email"
+,in_out double "isCompleteness_Email"
+,in_out double "isValidity_Email"
+,in_out varchar "rnCompleteness_Email"
+,in_out varchar "rnValidity_Email"
+,in_out varchar "thCompleteness_Email"
+,in_out varchar "thValidity_Email"
+
+,in_out integer "_filter_"
+
+);
+dcl integer dg_filter_;
+
+total_timer_start = datetime();
+
+"isCompleteness_Email" = 1;
+"isValidity_Email" = 1;
+"rnCompleteness_Email" = 'Completeness_Email:Empty_String';
+"rnValidity_Email" = 'Validity_Email';
+"thCompleteness_Email" = '20:40';
+"thValidity_Email" = '20:40';
+
+timer_start = datetime();
+"Field_Email_Empty_String_hdl".execute("Value_Email", "isCompleteness_Email");
+elapsed_time = datetime() - timer_start;
+logr_perf.log( 'd', 'Package Name: "Mon_Person_Field_Email", Node Name: Empty_String, Node ID: c25f05da-c114-4a1e-a164-20636451836d, NODE DURATION: ' .. elapsed_time);
+
+if ( "isCompleteness_Email" = 0 ) then do;
+
+end;
+else do;
+
+timer_start = datetime();
+"Field_Email_Validity_Email_hdl".execute("Value_Email", "isValidity_Email");
+elapsed_time = datetime() - timer_start;
+logr_perf.log( 'd', 'Package Name: "Mon_Person_Field_Email", Node Name: Validity_Email, Node ID: bca3eabc-ffcd-4791-a5c6-9f9424ed1dba, NODE DURATION: ' .. elapsed_time);
+
+end;
+
+"end":/*label for decision node link to flow end*/
+
+total_elapsed_time = datetime() - total_timer_start;
+logr_perf.log( 'd', 'Package Name: "Mon_Person_Field_Email", TOTAL DURATION: ' .. total_elapsed_time);
+
+end;
+
+/* PACKAGE_END: "Mon_Person_Field_Email" */
+endpackage;
+ds2_options scond=WARNING;
+/* Custom Object Field_Forename retrieved on Wed Oct 12 15:48:48 UTC 2022 */ 
+
+ds2_options scond=WARNING;
+/* Rule Set Empty_String version 1.2 generated on Wed Oct 12 15:48:47 UTC 2022 */
+
+DS2_OPTIONS LOGICALEXPR = STANDARD;
+DS2_OPTIONS SCOND = WARNING;
+DS2_OPTIONS MISSING_NOTE;
+
+/* PACKAGE_START: packageName="Field_Forename_Empty_String", referencedBy=Field_Forename, name=Empty_String, nodeId=17092a1d-cf9d-4dac-b669-ba2a90d64cfe, objectUri=/businessRules/ruleSets/bcc30852-5555-4b20-bdf5-93cbccd8053a/revisions/fa510da0-1a7f-4fb2-8085-90914d14aace */
+package "Field_Forename_Empty_String"  / inline;
+
+dcl package logger _logger('App.SASDCM');
+dcl package logger logr_variableTrace('App.TableServices.DS2.Runtime.TraceVariables');
+
+/* ---- RULE FIRED FLAG COUNT = 0 ---- */
+
+    method setruleFiredBasePosition(integer newBasePosition);
+end;
+method setDecisionNodeID(varchar newDecisonNodeID);
+end;
+method enableRuleFiredRecording();
+end;
+method disableRuleFiredRecording();
+end;
+method initRuleFireHashes();
+end;
+method getRuleFiredFlagCount() returns integer;
+return 0;
+end;
+method recordRuleFired(
+in_out char    ruleFiredFlags,
+in_out integer rulesFiredForRecordCount,
+char(36)       this_rule_id);
+end;
+
+method execute( in_out varchar "Value_String",in_out double "isEmptyString");
+
+;
+"isEmptyString" = 1 ;
+
+if (LENGTH(Value_String) = 0) then do;
+"isEmptyString" = 0 ;
+
+goto "end_48ca2e08-37d5-4489-8d7c-40bf0beb3a61";
+end;
+if (MISSING(Value_String) ) then do;
+"isEmptyString" = 0 ;
+
+end;
+
+"end_48ca2e08-37d5-4489-8d7c-40bf0beb3a61":
+
+rule_end:  /* label for rule RETURN action */
+end;
+
+/* PACKAGE_END: "Field_Forename_Empty_String" */
+endpackage;
+ds2_options scond=WARNING;
+/* Rule Set Validity_Forename version 1.1 generated on Wed Oct 12 15:48:47 UTC 2022 */
+
+DS2_OPTIONS LOGICALEXPR = STANDARD;
+DS2_OPTIONS SCOND = WARNING;
+DS2_OPTIONS MISSING_NOTE;
+
+/* PACKAGE_START: packageName="Field_Forename_Validity_Forename", referencedBy=Field_Forename, name=Validity_Forename, nodeId=32259948-ef22-44ea-a52a-38415f318647, objectUri=/businessRules/ruleSets/8bc23305-d43e-49fe-9992-c2b856626f3e/revisions/338c7227-ac56-4733-a55e-9851a964944f */
+package "Field_Forename_Validity_Forename"  / inline;
+
+dcl package logger _logger('App.SASDCM');
+dcl package logger logr_variableTrace('App.TableServices.DS2.Runtime.TraceVariables');
+
+/* ---- RULE FIRED FLAG COUNT = 0 ---- */
+method setruleFiredBasePosition(integer newBasePosition);
+end;
+method setDecisionNodeID(varchar newDecisonNodeID);
+end;
+method enableRuleFiredRecording();
+end;
+method disableRuleFiredRecording();
+end;
+method initRuleFireHashes();
+end;
+method getRuleFiredFlagCount() returns integer;
+return 0;
+end;
+method recordRuleFired(
+in_out char    ruleFiredFlags,
+in_out integer rulesFiredForRecordCount,
+char(36)       this_rule_id);
+end;
+
+method execute( in_out varchar "Value_Forename",in_out double "isValidity_Forename");
+dcl double "re";
+
+;
+"isValidity_Forename" = 1 ;
+
+if (ANYDIGIT(Value_Forename) > 0) then do;
+"isValidity_Forename" = 0 ;
+
+goto rule_end;
+
+end;
+
+"end_d6538e19-81ea-4d42-ad26-161ff3aff8b5":
+
+if (ANYPUNCT(Value_Forename) > 0) then do;
+"isValidity_Forename" = 0 ;
+
+end;
+
+"end_6e79c957-831f-4907-902c-e6ad63cd13bd":
+
+if ("isValidity_Forename" = 0 ) then do;
+re= prxparse('/(.-.)/');
+if prxmatch(re,Value_Forename) then do;
+isValidity_Forename= 1;
+end;
+re= prxparse('/^(.\.)+/');
+if isValidity_Forename = 0 then do;
+if prxmatch(re,Value_Forename) then do;
+isValidity_Forename= 1;
+end;
+end;
+end;
+
+"end_4821450a-f2d1-4259-af83-f174ee279a39":
+
+rule_end:  /* label for rule RETURN action */
+end;
+
+/* PACKAGE_END: "Field_Forename_Validity_Forename" */
+endpackage;
+
+DS2_OPTIONS LOGICALEXPR = STANDARD;
+DS2_OPTIONS SCOND = WARNING;
+DS2_OPTIONS MISSING_NOTE;
+
+/* Decision Field_Forename version 1.2 generated on Wed Oct 12 15:48:47 UTC 2022 */
+/* PACKAGE_START: packageName="Mon_Person_Field_Forename", referencedBy=Mon_Person, name=Field_Forename, nodeId=40707e4d-f621-463a-a00b-dc103b24a41d, objectUri=/decisions/flows/050547de-324a-4b19-a2d7-b5cd9982cf8c/revisions/4c38452e-f6db-4da6-9b95-672b0183c167 */
+package "Mon_Person_Field_Forename"  / inline;
+dcl package logger logr_perf('App.tk.SID.Perf');
+dcl double timer_start;
+dcl double elapsed_time;
+dcl double total_timer_start;
+dcl double total_elapsed_time;
+
+dcl package "Field_Forename_Empty_String" "Field_Forename_Empty_String_hdl"();
+dcl package "Field_Forename_Validity_Forename" "Field_Forename_Validity_Forename_hdl"();
+
+method init();
+end;
+
+method execute (
+varchar(100) "Value_Forename"
+,in_out double "isCompleteness_Forename"
+,in_out double "isValidity_Forename"
+,in_out varchar "rnCompleteness_Forename"
+,in_out varchar "rnValidity_Forename"
+,in_out varchar "thCompleteness_Forename"
+,in_out varchar "thValidity_Forename"
+
+,in_out integer "_filter_"
+
+);
+dcl integer dg_filter_;
+
+total_timer_start = datetime();
+
+"isCompleteness_Forename" = 1;
+"isValidity_Forename" = 1;
+"rnCompleteness_Forename" = 'Completeness_Forename:Empty_String';
+"rnValidity_Forename" = 'Validity_Forename';
+"thCompleteness_Forename" = '20:40';
+"thValidity_Forename" = '20:40';
+
+timer_start = datetime();
+"Field_Forename_Empty_String_hdl".execute("Value_Forename", "isCompleteness_Forename");
+elapsed_time = datetime() - timer_start;
+logr_perf.log( 'd', 'Package Name: "Mon_Person_Field_Forename", Node Name: Empty_String, Node ID: 17092a1d-cf9d-4dac-b669-ba2a90d64cfe, NODE DURATION: ' .. elapsed_time);
+
+if ( "isCompleteness_Forename" = 0 ) then do;
+
+end;
+else do;
+
+timer_start = datetime();
+"Field_Forename_Validity_Forename_hdl".execute("Value_Forename", "isValidity_Forename");
+elapsed_time = datetime() - timer_start;
+logr_perf.log( 'd', 'Package Name: "Mon_Person_Field_Forename", Node Name: Validity_Forename, Node ID: 32259948-ef22-44ea-a52a-38415f318647, NODE DURATION: ' .. elapsed_time);
+
+end;
+
+"end":/*label for decision node link to flow end*/
+
+total_elapsed_time = datetime() - total_timer_start;
+logr_perf.log( 'd', 'Package Name: "Mon_Person_Field_Forename", TOTAL DURATION: ' .. total_elapsed_time);
+
+end;
+
+/* PACKAGE_END: "Mon_Person_Field_Forename" */
+endpackage;
+ds2_options scond=WARNING;
+/* Custom Object Field_Phone retrieved on Wed Oct 12 15:48:48 UTC 2022 */ 
+
+ds2_options scond=WARNING;
+/* Rule Set Empty_String version 1.2 generated on Wed Oct 12 15:48:47 UTC 2022 */
+
+DS2_OPTIONS LOGICALEXPR = STANDARD;
+DS2_OPTIONS SCOND = WARNING;
+DS2_OPTIONS MISSING_NOTE;
+
+/* PACKAGE_START: packageName="Field_Phone_Empty_String", referencedBy=Field_Phone, name=Empty_String, nodeId=00afa215-1c68-44fc-b9ad-85056650709d, objectUri=/businessRules/ruleSets/bcc30852-5555-4b20-bdf5-93cbccd8053a/revisions/fa510da0-1a7f-4fb2-8085-90914d14aace */
+package "Field_Phone_Empty_String"  / inline;
+
+dcl package logger _logger('App.SASDCM');
+dcl package logger logr_variableTrace('App.TableServices.DS2.Runtime.TraceVariables');
+
+/* ---- RULE FIRED FLAG COUNT = 0 ---- */
+
+    method setruleFiredBasePosition(integer newBasePosition);
+end;
+method setDecisionNodeID(varchar newDecisonNodeID);
+end;
+method enableRuleFiredRecording();
+end;
+method disableRuleFiredRecording();
+end;
+method initRuleFireHashes();
+end;
+method getRuleFiredFlagCount() returns integer;
+return 0;
+end;
+method recordRuleFired(
+in_out char    ruleFiredFlags,
+in_out integer rulesFiredForRecordCount,
+char(36)       this_rule_id);
+end;
+
+method execute( in_out varchar "Value_String",in_out double "isEmptyString");
+
+;
+"isEmptyString" = 1 ;
+
+if (LENGTH(Value_String) = 0) then do;
+"isEmptyString" = 0 ;
+
+goto "end_48ca2e08-37d5-4489-8d7c-40bf0beb3a61";
+end;
+if (MISSING(Value_String) ) then do;
+"isEmptyString" = 0 ;
+
+end;
+
+"end_48ca2e08-37d5-4489-8d7c-40bf0beb3a61":
+
+rule_end:  /* label for rule RETURN action */
+end;
+
+/* PACKAGE_END: "Field_Phone_Empty_String" */
+endpackage;
+ds2_options scond=WARNING;
+/* Rule Set Validity_Phone version 1.4 generated on Wed Oct 12 15:48:47 UTC 2022 */
+
+DS2_OPTIONS LOGICALEXPR = STANDARD;
+DS2_OPTIONS SCOND = WARNING;
+DS2_OPTIONS MISSING_NOTE;
+
+/* PACKAGE_START: packageName="Field_Phone_Validity_Phone", referencedBy=Field_Phone, name=Validity_Phone, nodeId=8daba623-4048-4faf-82b6-1a6b7edb3107, objectUri=/businessRules/ruleSets/5bfa3374-8b61-43b2-8004-41ce14f159b4/revisions/cb9af80f-dfa7-4a65-a156-fdd84aee3056 */
+package "Field_Phone_Validity_Phone"  / inline;
+
+dcl package logger _logger('App.SASDCM');
+dcl package logger logr_variableTrace('App.TableServices.DS2.Runtime.TraceVariables');
+
+/* ---- RULE FIRED FLAG COUNT = 0 ---- */
+method setruleFiredBasePosition(integer newBasePosition);
+end;
+method setDecisionNodeID(varchar newDecisonNodeID);
+end;
+method enableRuleFiredRecording();
+end;
+method disableRuleFiredRecording();
+end;
+method initRuleFireHashes();
+end;
+method getRuleFiredFlagCount() returns integer;
+return 0;
+end;
+method recordRuleFired(
+in_out char    ruleFiredFlags,
+in_out integer rulesFiredForRecordCount,
+char(36)       this_rule_id);
+end;
+
+method execute( in_out varchar "Value_Phone",in_out double "isValidity_Phone");
+
+;
+"isValidity_Phone" = 1 ;
+
+if (LENGTH(COMPRESS(Value_Phone)) > 0) then do;
+if (LENGTH(COMPRESS(Value_Phone)) ^= 11) then do;
+"isValidity_Phone" = 0 ;
+
+goto rule_end;
+
+end;
+end;
+
+"end_d9746b7a-1a99-44c8-a512-21b4d7ead8b4":
+
+if (SUBSTR(Value_Phone,1,2) ^= '01' AND SUBSTR(Value_Phone,1,2) ^= '02') then do;
+"isValidity_Phone" = 0 ;
+
+goto rule_end;
+
+end;
+
+"end_11876d69-c395-4013-bb26-a03ca06023fc":
+
+rule_end:  /* label for rule RETURN action */
+end;
+
+/* PACKAGE_END: "Field_Phone_Validity_Phone" */
+endpackage;
+
+DS2_OPTIONS LOGICALEXPR = STANDARD;
+DS2_OPTIONS SCOND = WARNING;
+DS2_OPTIONS MISSING_NOTE;
+
+/* Decision Field_Phone version 1.1 generated on Wed Oct 12 15:48:48 UTC 2022 */
+/* PACKAGE_START: packageName="Mon_Person_Field_Phone", referencedBy=Mon_Person, name=Field_Phone, nodeId=6f235560-c78a-4da8-9776-331aafd4ade1, objectUri=/decisions/flows/173f176a-308c-455a-8176-35dc71ac5162/revisions/8165b905-0ed1-4654-aafb-834a76393896 */
+package "Mon_Person_Field_Phone"  / inline;
+dcl package logger logr_perf('App.tk.SID.Perf');
+dcl double timer_start;
+dcl double elapsed_time;
+dcl double total_timer_start;
+dcl double total_elapsed_time;
+
+dcl package "Field_Phone_Empty_String" "Field_Phone_Empty_String_hdl"();
+dcl package "Field_Phone_Validity_Phone" "Field_Phone_Validity_Phone_hdl"();
+
+method init();
+end;
+
+method execute (
+varchar(100) "Value_Phone"
+,in_out double "isCompleteness_Phone"
+,in_out double "isValidity_Phone"
+,in_out varchar "rnCompleteness_Phone"
+,in_out varchar "rnValidity_Phone"
+,in_out varchar "thCompleteness_Phone"
+,in_out varchar "thValidity_Phone"
+
+,in_out integer "_filter_"
+
+);
+dcl integer dg_filter_;
+
+total_timer_start = datetime();
+
+"isCompleteness_Phone" = 1;
+"isValidity_Phone" = 1;
+"rnCompleteness_Phone" = 'Completeness_Phone:Empty_String';
+"rnValidity_Phone" = 'Validity_Phone';
+"thCompleteness_Phone" = '20:40';
+"thValidity_Phone" = '20:40';
+
+timer_start = datetime();
+"Field_Phone_Empty_String_hdl".execute("Value_Phone", "isCompleteness_Phone");
+elapsed_time = datetime() - timer_start;
+logr_perf.log( 'd', 'Package Name: "Mon_Person_Field_Phone", Node Name: Empty_String, Node ID: 00afa215-1c68-44fc-b9ad-85056650709d, NODE DURATION: ' .. elapsed_time);
+
+if ( "isCompleteness_Phone" = 0 ) then do;
+
+end;
+else do;
+
+timer_start = datetime();
+"Field_Phone_Validity_Phone_hdl".execute("Value_Phone", "isValidity_Phone");
+elapsed_time = datetime() - timer_start;
+logr_perf.log( 'd', 'Package Name: "Mon_Person_Field_Phone", Node Name: Validity_Phone, Node ID: 8daba623-4048-4faf-82b6-1a6b7edb3107, NODE DURATION: ' .. elapsed_time);
+
+end;
+
+"end":/*label for decision node link to flow end*/
+
+total_elapsed_time = datetime() - total_timer_start;
+logr_perf.log( 'd', 'Package Name: "Mon_Person_Field_Phone", TOTAL DURATION: ' .. total_elapsed_time);
+
+end;
+
+/* PACKAGE_END: "Mon_Person_Field_Phone" */
+endpackage;
+ds2_options scond=WARNING;
+/* Custom Object Field_Surname retrieved on Wed Oct 12 15:48:48 UTC 2022 */ 
+
+ds2_options scond=WARNING;
+/* Rule Set Empty_String version 1.2 generated on Wed Oct 12 15:48:47 UTC 2022 */
+
+DS2_OPTIONS LOGICALEXPR = STANDARD;
+DS2_OPTIONS SCOND = WARNING;
+DS2_OPTIONS MISSING_NOTE;
+
+/* PACKAGE_START: packageName="Field_Surname_Empty_String", referencedBy=Field_Surname, name=Empty_String, nodeId=9336b360-8faa-4312-8965-686ee7103472, objectUri=/businessRules/ruleSets/bcc30852-5555-4b20-bdf5-93cbccd8053a/revisions/fa510da0-1a7f-4fb2-8085-90914d14aace */
+package "Field_Surname_Empty_String"  / inline;
+
+dcl package logger _logger('App.SASDCM');
+dcl package logger logr_variableTrace('App.TableServices.DS2.Runtime.TraceVariables');
+
+/* ---- RULE FIRED FLAG COUNT = 0 ---- */
+
+    method setruleFiredBasePosition(integer newBasePosition);
+end;
+method setDecisionNodeID(varchar newDecisonNodeID);
+end;
+method enableRuleFiredRecording();
+end;
+method disableRuleFiredRecording();
+end;
+method initRuleFireHashes();
+end;
+method getRuleFiredFlagCount() returns integer;
+return 0;
+end;
+method recordRuleFired(
+in_out char    ruleFiredFlags,
+in_out integer rulesFiredForRecordCount,
+char(36)       this_rule_id);
+end;
+
+method execute( in_out varchar "Value_String",in_out double "isEmptyString");
+
+;
+"isEmptyString" = 1 ;
+
+if (LENGTH(Value_String) = 0) then do;
+"isEmptyString" = 0 ;
+
+goto "end_48ca2e08-37d5-4489-8d7c-40bf0beb3a61";
+end;
+if (MISSING(Value_String) ) then do;
+"isEmptyString" = 0 ;
+
+end;
+
+"end_48ca2e08-37d5-4489-8d7c-40bf0beb3a61":
+
+rule_end:  /* label for rule RETURN action */
+end;
+
+/* PACKAGE_END: "Field_Surname_Empty_String" */
+endpackage;
+ds2_options scond=WARNING;
+/* Rule Set Validity_Surname version 1.1 generated on Wed Oct 12 15:48:47 UTC 2022 */
+
+DS2_OPTIONS LOGICALEXPR = STANDARD;
+DS2_OPTIONS SCOND = WARNING;
+DS2_OPTIONS MISSING_NOTE;
+
+/* PACKAGE_START: packageName="Field_Surname_Validity_Surname", referencedBy=Field_Surname, name=Validity_Surname, nodeId=6d673144-8197-4c07-b018-e27349e17c2f, objectUri=/businessRules/ruleSets/6d556b83-428b-44a6-aeea-b35420d73509/revisions/f3fa89bf-6600-4437-a035-8be1a44c304d */
+package "Field_Surname_Validity_Surname"  / inline;
+
+dcl package logger _logger('App.SASDCM');
+dcl package logger logr_variableTrace('App.TableServices.DS2.Runtime.TraceVariables');
+
+/* ---- RULE FIRED FLAG COUNT = 0 ---- */
+method setruleFiredBasePosition(integer newBasePosition);
+end;
+method setDecisionNodeID(varchar newDecisonNodeID);
+end;
+method enableRuleFiredRecording();
+end;
+method disableRuleFiredRecording();
+end;
+method initRuleFireHashes();
+end;
+method getRuleFiredFlagCount() returns integer;
+return 0;
+end;
+method recordRuleFired(
+in_out char    ruleFiredFlags,
+in_out integer rulesFiredForRecordCount,
+char(36)       this_rule_id);
+end;
+
+method execute( in_out varchar "Value_Surname",in_out double "isValidity_Surname");
+dcl double "re";
+
+;
+"isValidity_Surname" = 1 ;
+
+if (ANYDIGIT(Value_Surname) > 0) then do;
+"isValidity_Surname" = 0 ;
+
+goto rule_end;
+
+end;
+
+"end_06b63760-0212-468d-ba57-1785c097eb2f":
+
+if (ANYPUNCT(Value_Surname) > 0) then do;
+"isValidity_Surname" = 0 ;
+
+end;
+
+"end_2f8fecec-a7dc-42ef-8636-4ab52c48fccc":
+
+if ("isValidity_Surname" = 0 ) then do;
+re= prxparse('/(.-.)/');
+if prxmatch(re,Value_Surname) then do;
+isValidity_Surname= 1;
+end;
+re= prxparse('/[A-Za-z]'' *[A-Za-z]/');
+if isValidity_Surname = 0 then do;
+if prxmatch(re,Value_Surname) then do;
+isValidity_Surname= 1;
+end;
+end;
+goto rule_end;
+
+end;
+
+"end_5c2c94d0-27f2-495b-add2-9d0eb8a3435f":
+
+if (COUNTC(Value_Surname, '+') ) then do;
+"isValidity_Surname" = 0 ;
+
+end;
+
+"end_d47e1739-4abd-4963-86e3-6980029504a4":
+
+rule_end:  /* label for rule RETURN action */
+end;
+
+/* PACKAGE_END: "Field_Surname_Validity_Surname" */
+endpackage;
+
+DS2_OPTIONS LOGICALEXPR = STANDARD;
+DS2_OPTIONS SCOND = WARNING;
+DS2_OPTIONS MISSING_NOTE;
+
+/* Decision Field_Surname version 1.3 generated on Wed Oct 12 15:48:47 UTC 2022 */
+/* PACKAGE_START: packageName="Mon_Person_Field_Surname", referencedBy=Mon_Person, name=Field_Surname, nodeId=883199a1-2734-433e-a265-18898249af8b, objectUri=/decisions/flows/fb90d25e-bc2f-439f-8457-5e4485501aae/revisions/5d4d4bb6-aa97-4b8c-ac4f-c248dd8d6cca */
+package "Mon_Person_Field_Surname"  / inline;
+dcl package logger logr_perf('App.tk.SID.Perf');
+dcl double timer_start;
+dcl double elapsed_time;
+dcl double total_timer_start;
+dcl double total_elapsed_time;
+
+dcl package "Field_Surname_Empty_String" "Field_Surname_Empty_String_hdl"();
+dcl package "Field_Surname_Validity_Surname" "Field_Surname_Validity_Surname_hdl"();
+
+method init();
+end;
+
+method execute (
+varchar(100) "Value_Surname"
+,in_out double "isCompleteness_Surname"
+,in_out double "isValidity_Surname"
+,in_out varchar "rnCompleteness_Surname"
+,in_out varchar "rnValidity_Surname"
+,in_out varchar "thCompleteness_Surname"
+,in_out varchar "thValidity_Surname"
+
+,in_out integer "_filter_"
+
+);
+dcl integer dg_filter_;
+
+total_timer_start = datetime();
+
+"isCompleteness_Surname" = 1;
+"isValidity_Surname" = 1;
+"rnCompleteness_Surname" = 'Completeness_Surname:Empty_String';
+"rnValidity_Surname" = 'Validity_Surname';
+"thCompleteness_Surname" = '20:40';
+"thValidity_Surname" = '20:40';
+
+timer_start = datetime();
+"Field_Surname_Empty_String_hdl".execute("Value_Surname", "isCompleteness_Surname");
+elapsed_time = datetime() - timer_start;
+logr_perf.log( 'd', 'Package Name: "Mon_Person_Field_Surname", Node Name: Empty_String, Node ID: 9336b360-8faa-4312-8965-686ee7103472, NODE DURATION: ' .. elapsed_time);
+
+if ( "isCompleteness_Surname" = 0 ) then do;
+
+end;
+else do;
+
+timer_start = datetime();
+"Field_Surname_Validity_Surname_hdl".execute("Value_Surname", "isValidity_Surname");
+elapsed_time = datetime() - timer_start;
+logr_perf.log( 'd', 'Package Name: "Mon_Person_Field_Surname", Node Name: Validity_Surname, Node ID: 6d673144-8197-4c07-b018-e27349e17c2f, NODE DURATION: ' .. elapsed_time);
+
+end;
+
+"end":/*label for decision node link to flow end*/
+
+total_elapsed_time = datetime() - total_timer_start;
+logr_perf.log( 'd', 'Package Name: "Mon_Person_Field_Surname", TOTAL DURATION: ' .. total_elapsed_time);
+
+end;
+
+/* PACKAGE_END: "Mon_Person_Field_Surname" */
+endpackage;
+ds2_options scond=WARNING;
+/* Custom Object Field_Title retrieved on Wed Oct 12 15:48:48 UTC 2022 */ 
+
+ds2_options scond=WARNING;
+/* Rule Set Accuracy_Title version 1.2 generated on Wed Oct 12 15:48:47 UTC 2022 */
+
+DS2_OPTIONS LOGICALEXPR = STANDARD;
+DS2_OPTIONS SCOND = WARNING;
+DS2_OPTIONS MISSING_NOTE;
+
+/* PACKAGE_START: packageName="Field_Title_Accuracy_Title", referencedBy=Field_Title, name=Accuracy_Title, nodeId=43e680e8-89f1-468b-bfda-133296ee441a, objectUri=/businessRules/ruleSets/87e07d9d-de87-4227-8219-79fade09ccee/revisions/7c0ed058-bc02-4583-9488-323a86145c39 */
+package "Field_Title_Accuracy_Title"  / inline;
+
+dcl package logger _logger('App.SASDCM');
+dcl package logger logr_variableTrace('App.TableServices.DS2.Runtime.TraceVariables');
+
+dcl varchar(512)   lookup_value;
+
+dcl varchar(256)   lookup_key;
+dcl package datagrid lookup_0 ('lookup_0');
+/* lookup for $L42HJT4XIMRHMZKME6JFRUT6AFQ_K */
+/* for inline lookups we initialize datagrids in the package constructor */
+forward DataGrid_create;
+forward DataGrid_FilteredGet;
+
+    method "Field_Title_Accuracy_Title"();
+
+/* lookup: $L42HJT4XIMRHMZKME6JFRUT6AFQ_K */
+DataGrid_create(lookup_0, '[{"metadata":[{"key":"string"},{"value":"string"}]}, {"data":[
+["Doctor","Doctor"],["Lady","Lady"],["Lord","Lord"],["Miss","Miss"],["Mr","Mr"],["Mrs","Mrs"],["Ms","Ms"],
+["Prof","Prof"]]}]');
+
+end;
+
+method getLookupValue() returns varchar(512);
+return lookup_value;
+end;
+
+method doLookupFind(varchar(256) lookupKey, varchar(100) lookupName) returns int;
+dcl integer rc;
+rc = 1;
+lookup_value = '';
+if ( not missing(lookupKey) ) then do;
+
+lookup_key = strip(lookupkey);
+
+select(lookupName);
+when('$L42HJT4XIMRHMZKME6JFRUT6AFQ_K.') lookup_value = DataGrid_FilteredGet(lookup_0, 'value', 'key', 'eq', lookup_key);
+end;
+
+if ( not missing(lookup_value) ) then do;
+rc = 0;
+end;
+end;
+
+return rc;
+end;
+
+/* ---- RULE FIRED FLAG COUNT = 0 ---- */
+method setruleFiredBasePosition(integer newBasePosition);
+end;
+method setDecisionNodeID(varchar newDecisonNodeID);
+end;
+method enableRuleFiredRecording();
+end;
+method disableRuleFiredRecording();
+end;
+method initRuleFireHashes();
+end;
+method getRuleFiredFlagCount() returns integer;
+return 0;
+end;
+method recordRuleFired(
+in_out char    ruleFiredFlags,
+in_out integer rulesFiredForRecordCount,
+char(36)       this_rule_id);
+end;
+
+method DataGrid_create(package datagrid aGrid,
+varchar(10485760) JSONTableString)
+returns int;
+dcl int rowCnt;
+rowCnt = aGrid.deserialize(JSONTableString);
+if (rowCnt = 0) then
+rowCnt = aGrid.rowCount();
+return rowCnt;
+end;
+
+method DataGrid_FilteredGet(package datagrid aGrid,
+varchar(255) srcCol,
+varchar(255) cmpCol,
+char(2)      cmpOp,
+varchar(32767) cmpVal)
+returns varchar;
+dcl varchar(32767) colVal;
+colVal = aGrid.filteredGet(cmpCol, cmpOp, cmpVal, srcCol);
+return colVal;
+end;
+
+method execute( in_out varchar "Value_Title",in_out double "isAccuracy_Title");
+
+;
+"isAccuracy_Title" = 0 ;
+
+if (0 = doLookupFind("Value_Title",'$L42HJT4XIMRHMZKME6JFRUT6AFQ_K.')) then do;
+"isAccuracy_Title" = 1 ;
+
+end;
+
+"end_037172f3-0b19-46f9-b849-75b2654f3f87":
+
+rule_end:  /* label for rule RETURN action */
+end;
+
+/* PACKAGE_END: "Field_Title_Accuracy_Title" */
+endpackage;
+ds2_options scond=WARNING;
+/* Rule Set Empty_String version 1.2 generated on Wed Oct 12 15:48:47 UTC 2022 */
+
+DS2_OPTIONS LOGICALEXPR = STANDARD;
+DS2_OPTIONS SCOND = WARNING;
+DS2_OPTIONS MISSING_NOTE;
+
+/* PACKAGE_START: packageName="Field_Title_Empty_String", referencedBy=Field_Title, name=Empty_String, nodeId=a64dd10f-30e7-4f0f-bbc0-815628dbb86c, objectUri=/businessRules/ruleSets/bcc30852-5555-4b20-bdf5-93cbccd8053a/revisions/fa510da0-1a7f-4fb2-8085-90914d14aace */
+package "Field_Title_Empty_String"  / inline;
+
+dcl package logger _logger('App.SASDCM');
+dcl package logger logr_variableTrace('App.TableServices.DS2.Runtime.TraceVariables');
+
+/* ---- RULE FIRED FLAG COUNT = 0 ---- */
+method setruleFiredBasePosition(integer newBasePosition);
+end;
+method setDecisionNodeID(varchar newDecisonNodeID);
+end;
+method enableRuleFiredRecording();
+end;
+method disableRuleFiredRecording();
+end;
+method initRuleFireHashes();
+end;
+method getRuleFiredFlagCount() returns integer;
+return 0;
+end;
+method recordRuleFired(
+in_out char    ruleFiredFlags,
+in_out integer rulesFiredForRecordCount,
+char(36)       this_rule_id);
+end;
+
+method execute( in_out varchar "Value_String",in_out double "isEmptyString");
+
+;
+"isEmptyString" = 1 ;
+
+if (LENGTH(Value_String) = 0) then do;
+"isEmptyString" = 0 ;
+
+goto "end_48ca2e08-37d5-4489-8d7c-40bf0beb3a61";
+end;
+if (MISSING(Value_String) ) then do;
+"isEmptyString" = 0 ;
+
+end;
+
+"end_48ca2e08-37d5-4489-8d7c-40bf0beb3a61":
+
+rule_end:  /* label for rule RETURN action */
+end;
+
+/* PACKAGE_END: "Field_Title_Empty_String" */
+endpackage;
+
+DS2_OPTIONS LOGICALEXPR = STANDARD;
+DS2_OPTIONS SCOND = WARNING;
+DS2_OPTIONS MISSING_NOTE;
+
+/* Decision Field_Title version 1.2 generated on Wed Oct 12 15:48:47 UTC 2022 */
+/* PACKAGE_START: packageName="Mon_Person_Field_Title", referencedBy=Mon_Person, name=Field_Title, nodeId=bc96d137-4359-4964-9bb3-b0260a2571b0, objectUri=/decisions/flows/e46a7864-4aa5-42bb-8789-39d0ff4f66b9/revisions/e195bbec-47f7-4d1f-b7a1-e209e5d3e7e0 */
+package "Mon_Person_Field_Title"  / inline;
+dcl package logger logr_perf('App.tk.SID.Perf');
+dcl double timer_start;
+dcl double elapsed_time;
+dcl double total_timer_start;
+dcl double total_elapsed_time;
+
+dcl package "Field_Title_Accuracy_Title" "Field_Title_Accuracy_Title_hdl"();
+dcl package "Field_Title_Empty_String" "Field_Title_Empty_String_hdl"();
+
+method init();
+end;
+
+method execute (
+varchar(100) "Value_Title"
+,in_out double "isAccuracy_Title"
+,in_out double "isCompleteness_Title"
+,in_out varchar "rnAccuracy_Title"
+,in_out varchar "rnCompleteness_Title"
+,in_out varchar "thAccuracy_Title"
+,in_out varchar "thCompleteness_Title"
+
+,in_out integer "_filter_"
+
+);
+dcl integer dg_filter_;
+
+total_timer_start = datetime();
+
+"isAccuracy_Title" = 1;
+"isCompleteness_Title" = 1;
+"rnAccuracy_Title" = 'Accuracy_Title';
+"rnCompleteness_Title" = 'Completeness_Title:Empty_String';
+"thAccuracy_Title" = '20:40';
+"thCompleteness_Title" = '20:40';
+
+timer_start = datetime();
+"Field_Title_Empty_String_hdl".execute("Value_Title", "isCompleteness_Title");
+elapsed_time = datetime() - timer_start;
+logr_perf.log( 'd', 'Package Name: "Mon_Person_Field_Title", Node Name: Empty_String, Node ID: a64dd10f-30e7-4f0f-bbc0-815628dbb86c, NODE DURATION: ' .. elapsed_time);
+
+if ( isCompleteness_Title = 0 ) then do;
+
+end;
+else do;
+
+timer_start = datetime();
+"Field_Title_Accuracy_Title_hdl".execute("Value_Title", "isAccuracy_Title");
+elapsed_time = datetime() - timer_start;
+logr_perf.log( 'd', 'Package Name: "Mon_Person_Field_Title", Node Name: Accuracy_Title, Node ID: 43e680e8-89f1-468b-bfda-133296ee441a, NODE DURATION: ' .. elapsed_time);
+
+end;
+
+"end":/*label for decision node link to flow end*/
+
+total_elapsed_time = datetime() - total_timer_start;
+logr_perf.log( 'd', 'Package Name: "Mon_Person_Field_Title", TOTAL DURATION: ' .. total_elapsed_time);
+
+end;
+
+/* PACKAGE_END: "Mon_Person_Field_Title" */
+endpackage;
+
+  DS2_OPTIONS LOGICALEXPR = STANDARD;
+  DS2_OPTIONS SCOND = WARNING;
+  DS2_OPTIONS MISSING_NOTE;
+
+/* Decision Mon_Person version 1.2 generated on Wed Oct 12 15:48:48 UTC 2022 */
+/* {PACKAGE_START} */
+  package Mon_Person  / inline;
+    dcl package logger logr_perf('App.tk.SID.Perf');
+    dcl double timer_start;
+    dcl double elapsed_time;
+    dcl double total_timer_start;
+    dcl double total_elapsed_time;
+
+    dcl package "Mon_Person_Field_DOB" "Mon_Person_Field_DOB_hdl"();
+    dcl package "Mon_Person_Field_Email" "Mon_Person_Field_Email_hdl"();
+    dcl package "Mon_Person_Field_Forename" "Mon_Person_Field_Forename_hdl"();
+    dcl package "Mon_Person_Field_Phone" "Mon_Person_Field_Phone_hdl"();
+    dcl package "Mon_Person_Field_Surname" "Mon_Person_Field_Surname_hdl"();
+    dcl package "Mon_Person_Field_Title" "Mon_Person_Field_Title_hdl"();
+
+      method init();
+         "Mon_Person_Field_DOB_hdl".init();
+         "Mon_Person_Field_Email_hdl".init();
+         "Mon_Person_Field_Forename_hdl".init();
+         "Mon_Person_Field_Phone_hdl".init();
+         "Mon_Person_Field_Surname_hdl".init();
+         "Mon_Person_Field_Title_hdl".init();
+     end;
+
+    method execute_internal(
+       in_out varchar "ID"
+      ,in_out varchar "Value_DOB"
+      ,in_out varchar "Value_Email"
+      ,in_out varchar "Value_Forename"
+      ,in_out varchar "Value_Phone"
+      ,in_out varchar "Value_Surname"
+      ,in_out varchar "Value_Title"
+      ,in_out double "isAccuracy_Title"
+      ,in_out double "isCompleteness_DOB"
+      ,in_out double "isCompleteness_Email"
+      ,in_out double "isCompleteness_Forename"
+      ,in_out double "isCompleteness_Phone"
+      ,in_out double "isCompleteness_Surname"
+      ,in_out double "isCompleteness_Title"
+      ,in_out double "isValidity_Email"
+      ,in_out double "isValidity_Forename"
+      ,in_out double "isValidity_Phone"
+      ,in_out double "isValidity_Surname"
+      ,in_out varchar "rnAccuracy_Title"
+      ,in_out varchar "rnCompleteness_DOB"
+      ,in_out varchar "rnCompleteness_Email"
+      ,in_out varchar "rnCompleteness_Forename"
+      ,in_out varchar "rnCompleteness_Phone"
+      ,in_out varchar "rnCompleteness_Surname"
+      ,in_out varchar "rnCompleteness_Title"
+      ,in_out varchar "rnValidity_Email"
+      ,in_out varchar "rnValidity_Forename"
+      ,in_out varchar "rnValidity_Phone"
+      ,in_out varchar "rnValidity_Surname"
+      ,in_out varchar "thAccuracy_Title"
+      ,in_out varchar "thCompleteness_DOB"
+      ,in_out varchar "thCompleteness_Email"
+      ,in_out varchar "thCompleteness_Forename"
+      ,in_out varchar "thCompleteness_Phone"
+      ,in_out varchar "thCompleteness_Surname"
+      ,in_out varchar "thCompleteness_Title"
+      ,in_out varchar "thValidity_Email"
+      ,in_out varchar "thValidity_Forename"
+      ,in_out varchar "thValidity_Phone"
+      ,in_out varchar "thValidity_Surname"
+
+      ,in_out integer "_filter_"
+
+    );
+        dcl integer dg_filter_;
+        dcl integer _datagrid_count;
+        dcl integer i;
+        dcl integer _localRC;
+
+       dcl integer _masRC;
+
+        total_timer_start = datetime();
+
+"isAccuracy_Title" = 1;
+"isCompleteness_DOB" = 1;
+"isCompleteness_Email" = 1;
+"isCompleteness_Forename" = 1;
+"isCompleteness_Phone" = 1;
+"isCompleteness_Surname" = 1;
+"isCompleteness_Title" = 1;
+"isValidity_Email" = 1;
+"isValidity_Forename" = 1;
+"isValidity_Phone" = 1;
+"isValidity_Surname" = 1;
+"rnAccuracy_Title" = 'Accuracy_Title';
+"rnCompleteness_DOB" = 'Completeness_DOB:Empty_String';
+"rnCompleteness_Email" = 'Completeness_Email:Empty_String';
+"rnCompleteness_Forename" = 'Completeness_Forename:Empty_String';
+"rnCompleteness_Phone" = 'Completeness_Phone:Empty_String';
+"rnCompleteness_Surname" = 'Completeness_Surname:Empty_String';
+"rnCompleteness_Title" = 'Completeness_Title:Empty_String';
+"rnValidity_Email" = 'Validity_Email';
+"rnValidity_Forename" = 'Validity_Forename';
+"rnValidity_Phone" = 'Validity_Phone';
+"rnValidity_Surname" = 'Validity_Surname';
+"thAccuracy_Title" = '20:40';
+"thCompleteness_DOB" = '20:40';
+"thCompleteness_Email" = '20:40';
+"thCompleteness_Forename" = '20:40';
+"thCompleteness_Phone" = '20:40';
+"thCompleteness_Surname" = '20:40';
+"thCompleteness_Title" = '20:40';
+"thValidity_Email" = '20:40';
+"thValidity_Forename" = '20:40';
+"thValidity_Phone" = '20:40';
+"thValidity_Surname" = '20:40';
+
+        timer_start = datetime();
+        "Mon_Person_Field_Title_hdl".execute("Value_Title", "isAccuracy_Title", "isCompleteness_Title", "rnAccuracy_Title", "rnCompleteness_Title", "thAccuracy_Title", "thCompleteness_Title", "_filter_");
+        elapsed_time = datetime() - timer_start;
+        logr_perf.log( 'd', 'Package Name: Mon_Person, Node Name: Field_Title, Node ID: bc96d137-4359-4964-9bb3-b0260a2571b0, NODE DURATION: ' .. elapsed_time);
+
+        timer_start = datetime();
+        "Mon_Person_Field_Forename_hdl".execute("Value_Forename", "isCompleteness_Forename", "isValidity_Forename", "rnCompleteness_Forename", "rnValidity_Forename", "thCompleteness_Forename", "thValidity_Forename", "_filter_");
+        elapsed_time = datetime() - timer_start;
+        logr_perf.log( 'd', 'Package Name: Mon_Person, Node Name: Field_Forename, Node ID: 40707e4d-f621-463a-a00b-dc103b24a41d, NODE DURATION: ' .. elapsed_time);
+
+        timer_start = datetime();
+        "Mon_Person_Field_Surname_hdl".execute("Value_Surname", "isCompleteness_Surname", "isValidity_Surname", "rnCompleteness_Surname", "rnValidity_Surname", "thCompleteness_Surname", "thValidity_Surname", "_filter_");
+        elapsed_time = datetime() - timer_start;
+        logr_perf.log( 'd', 'Package Name: Mon_Person, Node Name: Field_Surname, Node ID: 883199a1-2734-433e-a265-18898249af8b, NODE DURATION: ' .. elapsed_time);
+
+        timer_start = datetime();
+        "Mon_Person_Field_DOB_hdl".execute("Value_DOB", "isCompleteness_DOB", "rnCompleteness_DOB", "thCompleteness_DOB", "_filter_");
+        elapsed_time = datetime() - timer_start;
+        logr_perf.log( 'd', 'Package Name: Mon_Person, Node Name: Field_DOB, Node ID: 0e9db4ef-8d64-4d30-8ec9-c70c218703bf, NODE DURATION: ' .. elapsed_time);
+
+        timer_start = datetime();
+        "Mon_Person_Field_Phone_hdl".execute("Value_Phone", "isCompleteness_Phone", "isValidity_Phone", "rnCompleteness_Phone", "rnValidity_Phone", "thCompleteness_Phone", "thValidity_Phone", "_filter_");
+        elapsed_time = datetime() - timer_start;
+        logr_perf.log( 'd', 'Package Name: Mon_Person, Node Name: Field_Phone, Node ID: 6f235560-c78a-4da8-9776-331aafd4ade1, NODE DURATION: ' .. elapsed_time);
+
+        timer_start = datetime();
+        "Mon_Person_Field_Email_hdl".execute("Value_Email", "isCompleteness_Email", "isValidity_Email", "rnCompleteness_Email", "rnValidity_Email", "thCompleteness_Email", "thValidity_Email", "_filter_");
+        elapsed_time = datetime() - timer_start;
+        logr_perf.log( 'd', 'Package Name: Mon_Person, Node Name: Field_Email, Node ID: 955a5c0c-c7d4-433e-9765-e1e3caeb8f6e, NODE DURATION: ' .. elapsed_time);
+
+        "end":/*label for decision node link to flow end*/
+
+        total_elapsed_time = datetime() - total_timer_start;
+        logr_perf.log( 'd', 'Package Name: Mon_Person, TOTAL DURATION: ' .. total_elapsed_time);
+
+     end;
+
+    method execute_skel(
+       varchar(100) "ID_"
+      ,varchar(100) "Value_DOB_"
+      ,varchar(100) "Value_Email_"
+      ,varchar(100) "Value_Forename_"
+      ,varchar(100) "Value_Phone_"
+      ,varchar(100) "Value_Surname_"
+      ,varchar(100) "Value_Title_"
+      ,in_out varchar "ID"
+      ,in_out varchar "Value_DOB"
+      ,in_out varchar "Value_Email"
+      ,in_out varchar "Value_Forename"
+      ,in_out varchar "Value_Phone"
+      ,in_out varchar "Value_Surname"
+      ,in_out varchar "Value_Title"
+      ,in_out double "isAccuracy_Title"
+      ,in_out double "isCompleteness_DOB"
+      ,in_out double "isCompleteness_Email"
+      ,in_out double "isCompleteness_Forename"
+      ,in_out double "isCompleteness_Phone"
+      ,in_out double "isCompleteness_Surname"
+      ,in_out double "isCompleteness_Title"
+      ,in_out double "isValidity_Email"
+      ,in_out double "isValidity_Forename"
+      ,in_out double "isValidity_Phone"
+      ,in_out double "isValidity_Surname"
+      ,in_out varchar "rnAccuracy_Title"
+      ,in_out varchar "rnCompleteness_DOB"
+      ,in_out varchar "rnCompleteness_Email"
+      ,in_out varchar "rnCompleteness_Forename"
+      ,in_out varchar "rnCompleteness_Phone"
+      ,in_out varchar "rnCompleteness_Surname"
+      ,in_out varchar "rnCompleteness_Title"
+      ,in_out varchar "rnValidity_Email"
+      ,in_out varchar "rnValidity_Forename"
+      ,in_out varchar "rnValidity_Phone"
+      ,in_out varchar "rnValidity_Surname"
+      ,in_out varchar "thAccuracy_Title"
+      ,in_out varchar "thCompleteness_DOB"
+      ,in_out varchar "thCompleteness_Email"
+      ,in_out varchar "thCompleteness_Forename"
+      ,in_out varchar "thCompleteness_Phone"
+      ,in_out varchar "thCompleteness_Surname"
+      ,in_out varchar "thCompleteness_Title"
+      ,in_out varchar "thValidity_Email"
+      ,in_out varchar "thValidity_Forename"
+      ,in_out varchar "thValidity_Phone"
+      ,in_out varchar "thValidity_Surname"
+);
+      dcl integer _localRC;
+      dcl integer _filter_;
+          "ID" = "ID_";
+      "Value_DOB" = "Value_DOB_";
+      "Value_Email" = "Value_Email_";
+      "Value_Forename" = "Value_Forename_";
+      "Value_Phone" = "Value_Phone_";
+      "Value_Surname" = "Value_Surname_";
+      "Value_Title" = "Value_Title_";
+
+          execute_internal(
+          "ID"
+         ,"Value_DOB"
+         ,"Value_Email"
+         ,"Value_Forename"
+         ,"Value_Phone"
+         ,"Value_Surname"
+         ,"Value_Title"
+         ,"isAccuracy_Title"
+         ,"isCompleteness_DOB"
+         ,"isCompleteness_Email"
+         ,"isCompleteness_Forename"
+         ,"isCompleteness_Phone"
+         ,"isCompleteness_Surname"
+         ,"isCompleteness_Title"
+         ,"isValidity_Email"
+         ,"isValidity_Forename"
+         ,"isValidity_Phone"
+         ,"isValidity_Surname"
+         ,"rnAccuracy_Title"
+         ,"rnCompleteness_DOB"
+         ,"rnCompleteness_Email"
+         ,"rnCompleteness_Forename"
+         ,"rnCompleteness_Phone"
+         ,"rnCompleteness_Surname"
+         ,"rnCompleteness_Title"
+         ,"rnValidity_Email"
+         ,"rnValidity_Forename"
+         ,"rnValidity_Phone"
+         ,"rnValidity_Surname"
+         ,"thAccuracy_Title"
+         ,"thCompleteness_DOB"
+         ,"thCompleteness_Email"
+         ,"thCompleteness_Forename"
+         ,"thCompleteness_Phone"
+         ,"thCompleteness_Surname"
+         ,"thCompleteness_Title"
+         ,"thValidity_Email"
+         ,"thValidity_Forename"
+         ,"thValidity_Phone"
+         ,"thValidity_Surname"
+      ,"_filter_"
+      );
+
+    end;
+
+    method execute(
+          varchar(100) "ID_"
+
+         ,varchar(100) "Value_DOB_"
+
+         ,varchar(100) "Value_Email_"
+
+         ,varchar(100) "Value_Forename_"
+
+         ,varchar(100) "Value_Phone_"
+
+         ,varchar(100) "Value_Surname_"
+
+         ,varchar(100) "Value_Title_"
+
+         ,in_out varchar "ID"
+         ,in_out varchar "Value_DOB"
+         ,in_out varchar "Value_Email"
+         ,in_out varchar "Value_Forename"
+         ,in_out varchar "Value_Phone"
+         ,in_out varchar "Value_Surname"
+         ,in_out varchar "Value_Title"
+         ,in_out double "isAccuracy_Title"
+         ,in_out double "isCompleteness_DOB"
+         ,in_out double "isCompleteness_Email"
+         ,in_out double "isCompleteness_Forename"
+         ,in_out double "isCompleteness_Phone"
+         ,in_out double "isCompleteness_Surname"
+         ,in_out double "isCompleteness_Title"
+         ,in_out double "isValidity_Email"
+         ,in_out double "isValidity_Forename"
+         ,in_out double "isValidity_Phone"
+         ,in_out double "isValidity_Surname"
+         ,in_out varchar "rnAccuracy_Title"
+         ,in_out varchar "rnCompleteness_DOB"
+         ,in_out varchar "rnCompleteness_Email"
+         ,in_out varchar "rnCompleteness_Forename"
+         ,in_out varchar "rnCompleteness_Phone"
+         ,in_out varchar "rnCompleteness_Surname"
+         ,in_out varchar "rnCompleteness_Title"
+         ,in_out varchar "rnValidity_Email"
+         ,in_out varchar "rnValidity_Forename"
+         ,in_out varchar "rnValidity_Phone"
+         ,in_out varchar "rnValidity_Surname"
+         ,in_out varchar "thAccuracy_Title"
+         ,in_out varchar "thCompleteness_DOB"
+         ,in_out varchar "thCompleteness_Email"
+         ,in_out varchar "thCompleteness_Forename"
+         ,in_out varchar "thCompleteness_Phone"
+         ,in_out varchar "thCompleteness_Surname"
+         ,in_out varchar "thCompleteness_Title"
+         ,in_out varchar "thValidity_Email"
+         ,in_out varchar "thValidity_Forename"
+         ,in_out varchar "thValidity_Phone"
+         ,in_out varchar "thValidity_Surname"
+
+    );
+    dcl integer _filter_;
+
+          "ID" = "ID_";
+      "Value_DOB" = "Value_DOB_";
+      "Value_Email" = "Value_Email_";
+      "Value_Forename" = "Value_Forename_";
+      "Value_Phone" = "Value_Phone_";
+      "Value_Surname" = "Value_Surname_";
+      "Value_Title" = "Value_Title_";
+
+      execute_internal(
+          "ID"
+         ,"Value_DOB"
+         ,"Value_Email"
+         ,"Value_Forename"
+         ,"Value_Phone"
+         ,"Value_Surname"
+         ,"Value_Title"
+         ,"isAccuracy_Title"
+         ,"isCompleteness_DOB"
+         ,"isCompleteness_Email"
+         ,"isCompleteness_Forename"
+         ,"isCompleteness_Phone"
+         ,"isCompleteness_Surname"
+         ,"isCompleteness_Title"
+         ,"isValidity_Email"
+         ,"isValidity_Forename"
+         ,"isValidity_Phone"
+         ,"isValidity_Surname"
+         ,"rnAccuracy_Title"
+         ,"rnCompleteness_DOB"
+         ,"rnCompleteness_Email"
+         ,"rnCompleteness_Forename"
+         ,"rnCompleteness_Phone"
+         ,"rnCompleteness_Surname"
+         ,"rnCompleteness_Title"
+         ,"rnValidity_Email"
+         ,"rnValidity_Forename"
+         ,"rnValidity_Phone"
+         ,"rnValidity_Surname"
+         ,"thAccuracy_Title"
+         ,"thCompleteness_DOB"
+         ,"thCompleteness_Email"
+         ,"thCompleteness_Forename"
+         ,"thCompleteness_Phone"
+         ,"thCompleteness_Surname"
+         ,"thCompleteness_Title"
+         ,"thValidity_Email"
+         ,"thValidity_Forename"
+         ,"thValidity_Phone"
+         ,"thValidity_Surname"
+      ,"_filter_"
+      );
+    end;
+
+/* {PACKAGE_END} */
+  endpackage;
+
